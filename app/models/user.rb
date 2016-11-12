@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  has_many :orders
+
   def make_current
     Thread.current[:user] = self
   end
