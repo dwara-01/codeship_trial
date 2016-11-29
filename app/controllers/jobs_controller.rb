@@ -1,3 +1,4 @@
+require 'pry'
 class JobsController < ApplicationController
 
   def create
@@ -15,6 +16,13 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+  end
+
+  def assign_job_to_hr
+    @job = Job.find(params[:id])
+    @hr = User.next_hr
+    @job.hr_agent = @hr
+    @job.save
   end
 
   def update

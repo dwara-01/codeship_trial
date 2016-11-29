@@ -53,4 +53,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+   get 'jobs/:job_name' => "jobs#handle_job"
+  resources :jobs
 end
