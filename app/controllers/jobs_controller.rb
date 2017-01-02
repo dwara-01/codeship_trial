@@ -31,4 +31,9 @@ class JobsController < ApplicationController
   def destroy
   end
 
+  def queue_job
+      enqueue(@job)
+  end
+
+
 end
